@@ -1,3 +1,4 @@
+//This is Contorller file code in ci4
 <?php
 
 namespace App\Controllers;
@@ -17,7 +18,7 @@ class SeoController extends BaseController
     {
         $this->generalModel = new GeneralModel();
     }
-
+    //Load the view page for submit the URL
     public function index()
     {
         if (!session()->has('user_name')) {
@@ -39,7 +40,7 @@ class SeoController extends BaseController
         // Set up the Google API client
         $client = new Google_Client();
         $client->setApplicationName('My Indexing API');
-        $client->setAuthConfig(APPPATH . '/config/futuristic-index-6241a8802f5a.json');
+        $client->setAuthConfig(APPPATH . '/config/futuristic-index-6241a8802f5a.json'); //change your service account.json file 
         $client->setScopes(['https://www.googleapis.com/auth/indexing']);
 
         // Create the Indexing API client   
